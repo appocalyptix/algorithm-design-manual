@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Queue;
 import java.util.Set;
 
-public class BFS {
+public class BreadthFirstSearch {
 
     public Vertex bfs(Graph graph, String key) {
         if (graph.currentSize == 0 || key == null) {

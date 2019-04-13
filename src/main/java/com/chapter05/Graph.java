@@ -5,11 +5,19 @@ public class Graph {
     int maxSize;
     int currentSize;
     Vertex[] vertices;
+    private boolean isDirected;
 
     public Graph(int maxSize) {
         this.maxSize = maxSize;
         this.currentSize = 0;
         this.vertices = new Vertex[maxSize];
+        this.isDirected = false;
+    }
+    public Graph(int maxSize, boolean isDirected) {
+        this.maxSize = maxSize;
+        this.currentSize = 0;
+        this.vertices = new Vertex[maxSize];
+        this.isDirected = isDirected;
     }
 
     public boolean addVertex(String data) {
@@ -29,6 +37,12 @@ public class Graph {
             return;
         }
         sVertex.adjacencyList.add(dIndex);
+
+        if(!isDirected) {
+            Vertex dVertex = getVertex(dest);
+            int sIndex = getIndex(src);
+            dVertex.adjacencyList.add(sIndex);
+        }
 
     }
 

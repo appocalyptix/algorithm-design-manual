@@ -15,7 +15,7 @@ import java.util.Set;
  */
 public class ShortestPath {
 
-    public List<Vertex> getShortestPAth(Graph graph, String src, String dest) {
+    public List<Vertex> getShortestPath(Graph graph, String src, String dest) {
         if (graph.currentSize == 0 || src == null || dest == null) {
             return null;
         }
@@ -102,7 +102,7 @@ public class ShortestPath {
         graph.addEdge("5", "4");
 
         ShortestPath sp = new ShortestPath();
-        List<Vertex> l = sp.getShortestPAth(graph, "1", "4");
+        List<Vertex> l = sp.getShortestPath(graph, "1", "4");
 
         for (Vertex v : l) {
             System.out.println(v.data);
